@@ -31,5 +31,14 @@ namespace BankAcountTest
             account.Deposit(50);
             Assert.AreEqual(100, account.GetBalance());
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Given_negative_money_should_return_an_argumentException()
+        {
+            Account account=new Account();
+            account.Deposit(-10);
+            Assert.AreEqual(0,account.GetBalance());
+        }
     }
 }
