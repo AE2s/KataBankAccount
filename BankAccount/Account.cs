@@ -20,5 +20,10 @@ namespace BankAccount
         {
            this.money = this.money.AddMoney(money);
         }
+
+        public void Withdraw(Money money)
+        {
+            this.money = this.money.Whitedraw(money);
+        }
     }
 }

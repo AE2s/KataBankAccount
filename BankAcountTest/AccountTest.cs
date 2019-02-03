@@ -42,7 +42,32 @@ namespace BankAcountTest
             Account account=new Account();
             var money = Money.ValueOf(-10);
             account.Deposit(money);
+        }
+
+        [TestMethod]
+        public void Given_a_whitedraw_of_10_when_account_have_10_should_return_zero()
+        {
+            Account account=new Account();
+            account.Deposit(Money.ValueOf(10));
+            account.Withdraw(Money.ValueOf(10));
             Assert.AreEqual(Money.ValueOf(0),account.GetBalance());
+        }
+
+        [TestMethod]
+        public void Given_a_whitedraw_of_10_when_account_have_50_should_return_40()
+        {
+            Account account = new Account();
+            account.Deposit(Money.ValueOf(50));
+            account.Withdraw(Money.ValueOf(10));
+            Assert.AreEqual(Money.ValueOf(40), account.GetBalance());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Given_a_whitedraw_of_10_when_account_have_zero_should_return_exception()
+        {
+            Account account = new Account();
+            account.Withdraw(Money.ValueOf(10));
         }
     }
 }

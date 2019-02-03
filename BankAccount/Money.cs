@@ -22,6 +22,13 @@ namespace BankAccount
         {
             return new Money(_money+moneyToAdd._money);
         }
+        public Money Whitedraw(Money moneyToRemove)
+        {
+            if(_money - moneyToRemove._money < 0)
+                throw  new ArgumentException("account have not enough money");
+
+            return new Money(_money - moneyToRemove._money);
+        }
 
         public override bool Equals(object obj)
         {
@@ -40,5 +47,6 @@ namespace BankAccount
         {
             return $"{_money}";
         }
+
     }
 }
