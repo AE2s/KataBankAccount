@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccount", "BankAccount\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccountMain", "BankAccountMain\BankAccountMain.csproj", "{FE716A33-B2DC-4979-8A5F-2F182284AE8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAcountTest", "BankAcountTest\BankAcountTest.csproj", "{13ED058F-7EAB-49B2-BD6F-43AD9184E9F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccountTest", "BankAcountTest\BankAccountTest.csproj", "{13ED058F-7EAB-49B2-BD6F-43AD9184E9F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
