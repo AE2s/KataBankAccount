@@ -4,24 +4,21 @@ namespace BankAccount
 {
     public class Account
     {
-        private double money;
+        private Money money;
 
         public Account()
         {
-            money = 0;
+            money = Money.ValueOf(0);
         }
 
-        public double GetBalance()
+        public Money GetBalance()
         {
             return money;
         }
 
-        public void Deposit(double money)
+        public void Deposit(Money money)
         {
-            if(money <= 0)
-                throw new ArgumentException("cannot deposit negative money");
-
-            this.money += money;
+           this.money = this.money.AddMoney(money);
         }
     }
 }
