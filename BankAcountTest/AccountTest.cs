@@ -69,5 +69,24 @@ namespace BankAcountTest
             Account account = new Account();
             account.Withdraw(Money.ValueOf(10));
         }
+
+        [TestMethod]
+        public void Given_a_deposit_operation_should_return_historic_of_account()
+        {
+            string operationExpected=$"Deposit | {DateTime.Now} | 20 | 20";
+            Account account=new Account();
+            account.Deposit(Money.ValueOf(20));
+            Assert.AreEqual(operationExpected, account.History());
+        }
+
+        [TestMethod]
+        public void Given_some_operations_to_account_should_give_all_historics()
+        {
+            string operationExpected = $"Deposit | {DateTime.Now} | 20 | 20\nWithdrawal | {DateTime.Now} | 10 | 10";
+            Account account = new Account();
+            account.Deposit(Money.ValueOf(20));
+            account.Withdraw(Money.ValueOf(10));
+            Assert.AreEqual(operationExpected, account.History());
+        }
     }
 }
